@@ -1,20 +1,17 @@
+import CartItem from "./CartItem/CartItem";
 
-
-function Drawer(){
+function Drawer({items=[],onClose}){
 
     return(
-        <div style={{display:'none'}} className="overlay">
+        <div  className="overlay">
             <div className="drawer">
-            <h2 className="mb-30">Корзина<img className="removeBtn" src="/img/btn-remove.svg" alt="Sneakers" /></h2>
+            <h2 className="mb-30">Корзина<img onClick={onClose} className="removeBtn" src="/img/btn-remove.svg" alt="Sneakers" /></h2>
             <div className="items">
-                <div className="cartItem d-flex align-center mb-20">
-                <div style={{ backgroundImage: "url(img/sneakers/1.jpg)" }} className="cartItemImg"></div>
-                <div className="mr-20 flex">
-                    <p className="mb-5">Мужские Кроссовки Nike Air Max 270</p>
-                    <b>12 999 грн.</b>
-                </div>
-                <img className="removeBtn" src="/img/btn-remove.svg" alt="Sneakers" />
-                </div>
+                {
+                    items.map((el) => (
+                        <CartItem item={el}/>
+                    ))
+                }
             </div>
             <div className="cartTotalBlock">
                 <ul>
