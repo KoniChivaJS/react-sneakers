@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 
 function Header({onClickCart}){
 
@@ -13,11 +13,16 @@ function Header({onClickCart}){
             </div>
             <ul className="d-flex">
                 <li className="mr-30 cu-p" onClick={onClickCart}>
-                    <img src="/img/cart.svg" alt="cart" />
+                    <img src="/img/cart.svg" alt="Корзина" />
                     <span>1205 грн.</span>
                 </li>
+                <li className="mr-20 cu-p">
+                    <Link to="/favourites">
+                        <img src="/img/heart.svg" alt="Закладки" />
+                    </Link>
+                </li>
                 <li>
-                <img src="/img/user.svg" alt="account" />
+                    <img src="/img/user.svg" alt="Пользователь" />
                 </li>
             </ul>
         </header>

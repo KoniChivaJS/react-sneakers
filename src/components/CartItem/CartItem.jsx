@@ -1,5 +1,5 @@
 
-function CartItem({item}){
+function CartItem({item,onRemove}){
     return(
         <div className="cartItem d-flex align-center mb-20">
             <div style={{ backgroundImage: `url(${item.imageUrl})` }} className="cartItemImg"></div>
@@ -7,7 +7,7 @@ function CartItem({item}){
                 <p className="mb-5">{item.title}</p>
                 <b>{item.price} грн.</b>
             </div>
-            <img className="removeBtn" src="/img/btn-remove.svg" alt="Sneakers" />
+            <img className="removeBtn" onClick={()=>onRemove(item.id)} src="/img/btn-remove.svg" alt="Sneakers" />
         </div>
     )
 }
